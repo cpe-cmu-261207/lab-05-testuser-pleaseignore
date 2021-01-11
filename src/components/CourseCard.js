@@ -5,13 +5,13 @@ const CourseCard = (props) => {
   const {dispatch} = useContext(TodosContext)
   return (
     <>
-      <p>This is Course card</p>
       {
       
       props.todos.map((course)=>{
           return (
             <>
-              <tr>
+            <div class= "coursecard" >
+            <tr>
                 <td>
                 <p>วิชา : {course.name}</p>
                 <p>เกรด : {course.grade}</p>
@@ -23,9 +23,11 @@ const CourseCard = (props) => {
                       type : "DELETE_TODO",
                       payload : course.id
                     })
-                  }}>x</button>
+                  }}>X</button>
                 </td>
               </tr>
+            </div>
+              
             </>
           )
         })

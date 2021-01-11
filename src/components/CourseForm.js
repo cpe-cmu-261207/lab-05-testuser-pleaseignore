@@ -8,8 +8,7 @@ const CourseForm = () => {
   const {dispatch} = useContext(TodosContext)
   return (
     <>
-      <p>This is course form</p>
-      <form onSubmit = {(e)=>{
+      <form class= "form" onSubmit = {(e)=>{
         e.preventDefault();
         dispatch({
           type : "ADD_TODO",
@@ -23,10 +22,10 @@ const CourseForm = () => {
         }
         )
       }}>
-        <input  placeholder="Subject name or code " onChange ={(e)=>{
+        <input class="name"  placeholder="Subject name or code " onChange ={(e)=>{
           setInputData({...inputData,name:e.currentTarget.value})
         }}></input>
-        <select onChange = {(e) => {
+        <select class="grade" onChange = {(e) => {
           setInputData({...inputData,val:e.currentTarget.value,
                         grade:e.currentTarget.options[e.currentTarget.selectedIndex].text})
         }}>
@@ -35,7 +34,7 @@ const CourseForm = () => {
             return (<option value={obj.value}>{obj.name}</option>)
           })}
         </select>
-        <select onChange ={(e) => {
+        <select class="credit" onChange ={(e) => {
           setInputData({...inputData,cred:e.currentTarget.value})
         }}>
           <option></option>
@@ -43,7 +42,7 @@ const CourseForm = () => {
             return (<option value={obj}>{obj}</option>)
           })}
         </select>
-        <button type="submit">add</button>
+        <button type="submit">ADD</button>
       </form>
     </>
   );

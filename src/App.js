@@ -63,19 +63,17 @@ function App() {
     calc(state.myTodos)
   }, [state.myTodos]); 
   return (
-    <div>
+    <>
       {/* TODO ADD UI */}
       <TodosContext.Provider value={{ state, dispatch }}>
-      <div className="container mx-auto h-screen">
         <h1>GPA CALCULATOR</h1>
-
-        <CourseCard todos={state.myTodos} />
-
-        <CourseForm />
-        <h1>{GPA.toFixed(2)}</h1>
-      </div>
+        <div>
+          <CourseCard  todos={state.myTodos} />
+        </div>  
+          <CourseForm />
+        <h1>GPA : {GPA.toFixed(2)}</h1>
     </TodosContext.Provider>
-    </div>
+    </>
   );
 }
 
